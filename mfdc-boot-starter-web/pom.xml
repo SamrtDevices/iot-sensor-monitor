@@ -11,6 +11,12 @@
 
     <groupId>com.xhtw.boot</groupId>
     <artifactId>mfdc-boot-starter-web</artifactId>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>4.2.5.RELEASE</version>
+        </dependency>
+    </dependencies>
 
 </project>
