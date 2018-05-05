@@ -11,5 +11,7 @@
     <modules>
         <module>iot-sensor-monitor-web</module>
         <module>iot-sensor-monitor-core</module>
+        <module>mfdc-boot-starter-core</module>
+        <module>mfdc-boot-starter-web</module>
     </modules>
 </project>
