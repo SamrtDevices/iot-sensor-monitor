@@ -8,6 +8,8 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import org.slf4j.Logger;
@@ -28,9 +30,6 @@ public class WebMvcConfigure extends WebMvcConfigurerAdapter {
 
     private final Logger logger = LoggerFactory.getLogger(WebMvcConfigure.class);
 
-//    @Value("${spring.profiles.active}")
-//    private String env;                 //当前激活的配置文件
-
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         FastJsonHttpMessageConverter converter = new FastJsonHttpMessageConverter();
@@ -40,6 +39,11 @@ public class WebMvcConfigure extends WebMvcConfigurerAdapter {
                 SerializerFeature.WriteNullNumberAsZero);//Number null -> 0
         converter.setFastJsonConfig(config);
         converters.add(converter);
+    }
+
+    @Bean
+    public HttpMessageConverters useConverters() {
+        return new HttpMessageConverters(new FastJsonHttpMessageConverter());
     }
 
 }
