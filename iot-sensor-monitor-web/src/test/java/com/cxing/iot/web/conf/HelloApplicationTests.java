@@ -5,10 +5,7 @@
 package com.cxing.iot.web.conf;
 
 import com.cxing.iot.IotSensorMonitorWebApplication;
-import com.cxing.iot.web.config.MqSender;
-import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -22,11 +19,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @SpringApplicationConfiguration(classes = IotSensorMonitorWebApplication.class)
 public class HelloApplicationTests {
 
-    @Autowired
-    private MqSender sender;
-
-    @Test
-    public void hello() throws Exception {
-        sender.send();
-    }
+//    @Autowired
+//    private MqSender sender;
+//
+//    @Test
+//    public void hello() throws Exception {
+//        sender.send();
+//    }
 }
